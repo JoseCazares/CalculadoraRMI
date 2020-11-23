@@ -12,6 +12,7 @@ public class MainClass {
         try{
             System.setProperty("java.rmi.server.hostname", "34.94.19.123");
             registro = LocateRegistry.createRegistry(1098);
+            LocateRegistry.getRegistry();
             skeleton = new Calculadora();
             registro.bind("Calculadora", skeleton);
             System.out.println("Servidor RMI activo...");

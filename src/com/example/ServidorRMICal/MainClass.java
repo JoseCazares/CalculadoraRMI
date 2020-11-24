@@ -10,12 +10,10 @@ public class MainClass {
 
     private static void Conectar(){
         try{
-            System.setProperty("java.rmi.server.hostname", "34.94.19.123");
-
-            registro = LocateRegistry.createRegistry(1098);
-            LocateRegistry.getRegistry();
+            registro = LocateRegistry.createRegistry(1099);
             skeleton = new Calculadora();
-            registro.rebind("Calculadora", skeleton);
+            registro.rebind("//10.168.0.2:1099/Calculadora", skeleton);
+
             System.out.println("Servidor RMI activo...");
         }catch (Exception e){
             System.out.println("Error server" + e.getMessage());
